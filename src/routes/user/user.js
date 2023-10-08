@@ -1,26 +1,26 @@
-// endpoints.js
 const express = require('express');
 const jsonServerRouter = require('json-server').router;
 const bodyParser = require('body-parser');
 
-const router = express.Router();
+const userRouter = express.Router();
 
-router.use(bodyParser.json());
+userRouter.use(bodyParser.json());
 
-// JSON-Server-Router für die API-Endpunkte
+// router config
 const jsonServer = jsonServerRouter('db.json');
-router.use('/api', jsonServer);
+userRouter.use('/api', jsonServer);
 
-// Registrierungsendpunkt
-router.post('/user/register', (req, res) => {
+// Create User
+userRouter.post('/user/register', (req, res) => {
   const { username, password } = req.body;
-  const newUser = { username, password };
+  const id = Math.random().toString();
+  const newUser = { username, password, id};
   jsonServer.db.get('users').push(newUser).write();
-  res.status(201).json({ message: 'Registrierung erfolgreich.' });
+  res.status(201).json({ message: 'Registrierung erfolgreich.', newUser });
 });
 
-// Login-Endpunkt
-router.post('/user/login', (req, res) => {
+// Login user
+userRouter.post('/user/login', (req, res) => {
   const { username, password } = req.body;
   const user = jsonServer.db
     .get('users')
@@ -33,4 +33,4 @@ router.post('/user/login', (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = userRouter;
