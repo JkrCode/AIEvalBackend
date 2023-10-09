@@ -13,8 +13,9 @@ postRouter.use('/api', jsonServer);
 // Create Post
 postRouter.post('/posts/', (req, res) => {
   const { title, text, userId } = req.body;
+  const date = new Date( Date.now()).toISOString();
   const postId = Math.random().toString()
-  const newPost = { title, text, userId, postId};
+  const newPost = { title, text, userId, postId, date};
   const id= userId;
   const user = jsonServer.db.get('users').find({id}).value()
   if(user){

@@ -27,7 +27,7 @@ userRouter.post('/user/login', (req, res) => {
     .find({ username, password })
     .value();
   if (user) {
-    res.status(200).json({ message: 'login successfull.' });
+    res.status(200).json({ message: 'login successfull.', user:user });
   } else {
     res.status(401).json({ message: 'wrong credentials' });
   }
