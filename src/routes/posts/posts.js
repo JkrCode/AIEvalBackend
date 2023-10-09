@@ -25,11 +25,11 @@ postRouter.post('/posts/', (req, res) => {
   }
 });
 
-// get all posts with userId
+// get all posts 
 postRouter.get('/posts/', (req, res)=>{
-    const userId = req.body.userId;
-    const posts = jsonServer.db.get('posts').filter({userId}).value();
+    const posts = jsonServer.db.get('posts').value();
     res.status(200).json({posts: posts})
 });
+
 
 module.exports = postRouter;

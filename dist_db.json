@@ -1,23 +1,35 @@
 {
-    "users": [
-      {
-        "username": "johannes",
-        "password": "password",
-        "id": "0.5752366115409695"
-      }
-    ],
-    "posts": [
-      {
-        "title": "first post",
-        "text": "some example text",
-        "userId": "0.5752366115409695",
-        "postId": "0.022909539525844957"
-      },
-      {
-        "title": "second post",
-        "text": "lorem ipsum 2",
-        "userId": "0.5752366115409695",
-        "postId": "0.8209678066133519"
-      }
-    ]
-  }
+  "users": [
+    {
+      "username": "johannes",
+      "password": "password",
+      "id": "0.5752366115409695"
+    }
+  ],
+  "posts": [
+    {
+      "title": "first post",
+      "text": "some example text",
+      "userId": "0.5752366115409695",
+      "postId": "0.022909539525844957"
+    },
+    {
+      "title": "second post",
+      "text": "lorem ipsum 2",
+      "userId": "0.5752366115409695",
+      "postId": "0.8209678066133519"
+    },
+    {
+      "title": "third post",
+      "text": "lorem ipsum 2 lorem ipsum 2 lorem ipsum 2 lorem ipsum 2 lorem ipsum 2 lorem ipsum 2",
+      "userId": "0.5752366115409695",
+      "postId": "0.8209678066133519"
+    },
+    {
+      "title": "fourth post",
+      "text": "lorem ipsum 2 lorem ipsum 2 lorem ipsum 2 lorem ipsum 2 lorem ipsum 2",
+      "userId": "0.5752366115409695",
+      "postId": "0.8209678066133519"
+    }
+  ]
+}
